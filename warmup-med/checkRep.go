@@ -5,21 +5,28 @@ package main
 import "fmt"
 
 func main() {
-	s := make([]string, 3)
-	s = append(s, "d")
-	s = append(s, "e", "f")
-	s = append(s, "e", "f")
-
-	c := make([]string, len(s))
-
-	copy(c, s)
-	fmt.Println("arr: ", s, "arr copied: ", c, "\n")
+	//	s := make([]string, 3)
+	//	s = append(s, "d")
+	//	s = append(s, "e", "f")
+	//	s = append(s, "e", "f")
+	//
+	//	c := make([]string, len(s))
+	//
+	//	copy(c, s)
+	//fmt.Println("arr: ", s, "arr copied: ", c, "\n")
 	// store results in slice like [T, F,T,F,T]
-	
+
+	s1 := make([]bool, 0)
 	res := checkRep("aba")
+	s1 = append(s1, res)
+
 	fmt.Println("RESULT: ", res)
+	fmt.Printf("results arr: %#v \n", s1)
+
 	res = checkRep("aa")
 
+	s1 = append(s1, res)
+	fmt.Printf("results arr: %#v \n", s1)
 	fmt.Println("RESULT: ", res)
 }
 
@@ -37,7 +44,7 @@ func checkRep(str string) bool {
 	for i := 0; i < startPt; i++ {
 
 		// divide by 2
-		if str[i] == str[startPt+i] {
+		if str[i] != str[startPt+i] {
 			fmt.Println("\ni==str[+i] => ", str[i], "==", str[startPt+i])
 
 			return false
