@@ -14,7 +14,6 @@ import (
 func stringTimes(str string, n int) (string, bytes.Buffer) {
 	if str == "" {
 		buf := new(bytes.Buffer)
-
 		return "", *buf
 	}
 	//var retStr
