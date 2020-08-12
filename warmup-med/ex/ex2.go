@@ -27,12 +27,56 @@ func f2(nums ...int) *[]int {
 	a = append(nums, b...) // a == [1 2 11 22]
 	return &a
 }
-func mapF() {
 
+type Str struct {
+	I int64
+	F float64
+	// j uintptr
+}
+
+func Generate(count int) (value []byte) {
+	value = make([]byte, count)
+	for i := 0; i < count; count++ {
+		value[i] = byte(i) // just for an example
+	}
+	return
+}
+
+func ptrRet(ptr *int, v int) (*int, int) {
+	// copy of ptr param is made
+
+	fmt.Println(&ptr)
+	v += 1
+	return ptr, v
+}
+
+func mapEdit() {
+	
+}
+// refr types : map,slice,ptr,chan
+// Go types (e.g. pointers, slices, channels, maps) are reference type
+//func getter( arr const []int ) {
+//	for i,j := range
+//}
+
+func ptr() (*Str, *Str) {
+	s1 := new(Str)
+	var s2 *Str
+	s2 = s1
+	return s1, s2
 }
 
 func main() {
-	f1()
+	i := 5
+	ij := &i
+	a, b := ptrRet(ij, *ij)
+
+	// a, b := ptr()
+	fmt.Println(&a, b)
+	
+	
+
+	//f1()
 	// arr := []int{1, 2, 3}
 	// arrAddr := &arr
 
