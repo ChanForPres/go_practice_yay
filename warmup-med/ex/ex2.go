@@ -50,9 +50,22 @@ func ptrRet(ptr *int, v int) (*int, int) {
 	return ptr, v
 }
 
-func mapEdit() {
+func mapEdit() (map[string]int, map[string]int, *map[string]int) {
+	var m1 map[string]int
+	m1 = make(map[string]int)
+
+	m2 := make(map[string]int)
+	m3 := new(map[string]int)
+	a, b, c := &m1, &m2, &m3
+	//a, b, c := &m1, &m2, &m3
+	m1["a"] = 1
+	a1 := *a
+	a1["b"] = 2
 	
+	fmt.Println(&a, b, c, a1)
+	return m1, m2, m3
 }
+
 // refr types : map,slice,ptr,chan
 // Go types (e.g. pointers, slices, channels, maps) are reference type
 //func getter( arr const []int ) {
@@ -67,15 +80,17 @@ func ptr() (*Str, *Str) {
 }
 
 func main() {
-	i := 5
-	ij := &i
-	a, b := ptrRet(ij, *ij)
+	m1, m2, m3 := mapEdit()
 
-	// a, b := ptr()
-	fmt.Println(&a, b)
-	
-	
-
+	a, b, c := &m1, &m2, &m3
+	fmt.Println(&a, b, c)
+	//	i := 5
+	//	ij := &i
+	//	a, b := ptrRet(ij, *ij)
+	//
+	//	// a, b := ptr()
+	//	fmt.Println(&a, b)
+	//
 	//f1()
 	// arr := []int{1, 2, 3}
 	// arrAddr := &arr
