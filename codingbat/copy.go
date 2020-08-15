@@ -17,7 +17,7 @@ func main() {
 	// geeks.f1()
 	// fmt.Println(x, i)
 	// geeks.F2()
-	geeks.F3()
+	geeks.F4()
 }
 
 func copyFun() {

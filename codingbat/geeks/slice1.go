@@ -2,6 +2,13 @@ package geeks
 
 import "fmt"
 
+func F4() {
+	s1 := make([]int, 0, 0)
+	s1 = append(s1, 1,1,1,1,1)
+	fmt.Println(len(s1),cap(s1))
+	
+}	
+
 func F3() {
 	s1 := make([]byte, 10)
 	s2 := make([]byte, 0, 10)
@@ -11,7 +18,7 @@ func F3() {
 	fmt.Println(s1, s2)
 	fmt.Printf("%x == %#v", s2[0], s2[0])
 	fmt.Printf("%x == %#v == %T == %d == %#U\n", a, a, a, a, a)
-
+	
 	fmt.Printf("%x == %#v", s2[0], s2[0])
 	fmt.Printf("%x == %#v == %T == %d == %#U\n", s2, s2, s2, s2, s2)
 
