@@ -58,11 +58,8 @@ func mapEdit() (map[string]int, map[string]int, *map[string]int) {
 	m3 := new(map[string]int)
 	a, b, c := &m1, &m2, &m3
 	//a, b, c := &m1, &m2, &m3
-	m1["a"] = 1
-	a1 := *a
-	a1["b"] = 2
-	
-	fmt.Println(&a, b, c, a1)
+	*a["a"] = 1
+	fmt.Println(&a, b, c)
 	return m1, m2, m3
 }
 
